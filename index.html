@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Neo | Cyber Security</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- LOADING SCREEN -->
+<div id="loader">
+  <canvas id="matrix"></canvas>
+  <div class="loader-text">LOADING...</div>
+</div>
+
+<!-- NEON CURSOR -->
+<div class="cursor"></div>
+
+
+  <div class="container">
+
+   <div class="profile">
+  <img src="MyPhoto.jpg" alt="My Photo">
+  <h1>Ramil Maharramov </h1>
+  <p>
+    Cyber Security / 
+    <span class="red">Red</span> 
+    <span class="team">Team</span>
+  </p>
+</div>
+
+ <div class="socials-top">
+  <a href="https://instagram.com/https.ramil" target="_blank" class="social-item">
+    <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png">
+    <span>Instagram</span>
+  </a>
+
+  <a href="https://github.com/Ramildi" target="_blank" class="social-item">
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733553.png">
+    <span>GitHub</span>
+  </a>
+
+  <a href="https://linkedin.com/in/Ramil-neo" target="_blank" class="social-item">
+    <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png">
+    <span>LinkedIn</span>
+  </a>
+</div>
+
+<div class="socials-bottom">
+  <a href="https://tryhackme.com/p/RootNeo" target="_blank" class="social-item">
+    <img src="https://tryhackme.com/img/favicon.png">
+    <span>TryHackMe</span>
+  </a>
+</div>
+
+
+<div class="cert-title">My Certificates</div>
+
+<div class="cert">
+  <img src="cert1.jpg" alt="Certificate 1">
+  <h3>Cisco - Networking Basics</h3>
+  <button onclick="openPDF('cert1.pdf')">Open PDF</button>
+</div>
+
+<div class="cert">
+  <img src="cert2.jpg" alt="Certificate 2">
+  <h3>Cisco - Introduction to Cybersecurity</h3>
+  <button onclick="openPDF('cert2.pdf')">Open PDF</button>
+</div>
+
+<div class="cert">
+  <img src="cert3.jpg" alt="Certificate 3">
+  <h3>Cisco - Ethical Hacker</h3>
+  <button onclick="openPDF('cert3.pdf')">Open PDF</button>
+</div>
+
+<div class="cert">
+  <img src="cert4.jpg" alt="Certificate 4">
+  <h3>IBM - Cybersecurity Fundamentals</h3>
+  <button onclick="openPDF('cert4.pdf')">Open PDF</button>
+</div>
+
+<div class="cert">
+  <img src="cert5.jpg" alt="Certificate 5">
+  <h3>TryHackMe - Advent of Cyber 2025</h3>
+  <button onclick="openPDF('cert5.pdf')">Open PDF</button>
+</div>
+
+<div class="cert">
+  <img src="cert6.jpg" alt="Certificate 6">
+  <h3>Cyber Security Red Team Training</h3>
+  <button onclick="openPDF('cert6.pdf')">Open PDF</button>
+</div>
+
+<div class="cert">
+  <img src="cert7.jpg" alt="Certificate 7">
+  <h3>Coders - Full Stack</h3>
+  <button onclick="openPDF('cert7.pdf')">Open PDF</button>
+</div>
+
+  </div>
+
+  <script src="matrix.js"></script>
+<script src="cursor.js"></script>
+
+
+  <script>
+    function openPDF(file) {
+      window.open(file, '_blank');
+    }
+
+    document.addEventListener('click', () => {
+      const el = document.createElement('div');
+      el.className = 'access';
+      el.textContent = 'HI NEO!';
+      document.body.appendChild(el);
+
+      setTimeout(() => el.remove(), 800);
+    });
+  </script>
+
+</body>
+</html>
