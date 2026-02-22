@@ -236,3 +236,71 @@ body {
   transform: translate(-50%, -50%);
   z-index: 999;
 }
+
+/* FULLSCREEN IMAGE MODAL */
+#imageModal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: scale(0);
+  opacity: 0;
+  transition: 0.4s ease;
+  z-index: 9999;
+}
+
+#imageModal.active {
+  transform: scale(1);
+  opacity: 1;
+}
+
+#modalImg {
+  width: 400px;
+  height: 400px;
+  max-width: 80vw;
+  max-height: 80vw;
+  object-fit: cover;
+
+  border-radius: 50%;           /* Dairə */
+  border: 4px solid #00ff66;    /* Neon çərçivə */
+  box-shadow: 0 0 40px #00ff66;
+
+  transform: scale(0.7);
+  transition: 0.4s ease;
+}
+
+#imageModal.active #modalImg {
+  transform: scale(1);
+  animation: zoomForward 0.4s ease;
+}
+
+
+@keyframes zoomForward {
+  0% { transform: scale(0.6); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+
+#neoText {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+  font-size: 120px;
+  font-weight: bold;
+  letter-spacing: 10px;
+  
+  color: #00ff66;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 0;
+
+  text-shadow:
+    0 0 10px #00ff66,
+    0 0 20px #00ff66,
+    0 0 40px #00ff66;
+}
+

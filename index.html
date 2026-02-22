@@ -17,11 +17,20 @@
 <!-- NEON CURSOR -->
 <div class="cursor"></div>
 
+<!-- PROFILE FULLSCREEN VIEW -->
+<div id="imageModal">
+  <img src="MyPhoto.jpg" id="modalImg">
+</div>
+
+<div id="neoText">Hi Neo</div>
+
+
 
   <div class="container">
 
    <div class="profile">
-  <img src="MyPhoto.jpg" alt="My Photo">
+  <img src="MyPhoto.jpg" alt="My Photo" id="profileImg">
+
   <h1>Ramil Maharramov </h1>
   <p>
     Cyber Security / 
@@ -101,8 +110,34 @@
 
   </div>
 
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+   <script src="neo.js"></script>
+
+
   <script src="matrix.js"></script>
-<script src="cursor.js"></script>
+<script>
+const glitchText = document.getElementById("neoGlitch");
+
+function showGlitch() {
+  gsap.to(glitchText, {
+    opacity: 1,
+    scale: 1.1,
+    duration: 0.5,
+    textShadow: "4px 0 red, -4px 0 blue"
+  });
+
+  setTimeout(() => {
+    gsap.to(glitchText, {
+      opacity: 0,
+      scale: 0.8,
+      duration: 0.5
+    });
+  }, 2000);
+}
+
+setInterval(showGlitch, 10000);
+</script>
+
 
 
   <script>
@@ -113,12 +148,26 @@
     document.addEventListener('click', () => {
       const el = document.createElement('div');
       el.className = 'access';
-      el.textContent = 'HI NEO!';
+      el.textContent = '';
       document.body.appendChild(el);
 
       setTimeout(() => el.remove(), 800);
     });
   </script>
+
+  <script>
+const profileImg = document.getElementById("profileImg");
+const modal = document.getElementById("imageModal");
+
+profileImg.addEventListener("click", () => {
+  modal.classList.add("active");
+});
+
+modal.addEventListener("click", () => {
+  modal.classList.remove("active");
+});
+</script>
+
 
 </body>
 </html>
